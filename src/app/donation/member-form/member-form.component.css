@@ -1,0 +1,613 @@
+.external-donation-main{
+    min-height: calc(100vh - 80px);
+    position: relative;
+}
+
+.external-donation-main img{
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+}
+.gradiet-green-bg{
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    background: linear-gradient(90deg, #7CE7AC 0%, rgba(124, 231, 172, 0) 100%);
+    width: 52.5%;
+    height: 100%;
+    content: '';
+}
+.external-donation-form-wrapper{
+    position: relative;
+    z-index: 3;
+    padding-top: 99px;
+    padding-bottom: 99px;
+}
+.external-donation-form-wrapper .donation-form-card{
+    max-width: 653px;
+    background: #FFFFFF;
+    border: 1px solid #E8E7EE;
+    box-shadow: 0px 16px 34px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    padding: 44px 40px;
+}
+
+.donation-form-card .donation-steps{
+    display: flex;
+    justify-content: space-between;
+}
+
+.donation-form-card .donation-steps .step-item{
+    flex-basis: 77px;
+    width: 77px;
+    display: inline-block;
+    content: '';
+    height: 6px;
+    background: #B4B4CB;
+    border-radius: 80px;
+}
+.donation-form-card .donation-steps .current-step{
+    flex-basis: 160px;
+    width: 160px;
+    background: #00AD52;
+    position: relative;
+    margin-left: 18.7px;
+}
+
+.donation-form-card .donation-steps .current-step::before{
+    content: attr(data-tag)'.';
+    left: -18.7px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 12px;
+    color: #00AD52;
+}
+.donation-form-card .donation-amount-label{
+    margin-top: 37px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 24px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    color: #1C2436;
+}
+
+.donation-form-card .donation-amount-label i{
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+.donation-form-card .amount-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+.donation-form-card .amount-list .amount-list-item{
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10.7px 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--body-font);
+    white-space: nowrap;
+}
+.donation-form-card .amount-list .amount-list-item.selected{
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+.amount-list input.addAmountInput{
+    height: 39px !important;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    width: 147px;
+    padding: 14px 20px;
+}
+.donation-form-card .donation-list-wrapper{
+    margin-top: 23px;
+}
+.donation-form-card .donation-list-wrapper .amount-label{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--dark);
+    margin-bottom: 9px;
+}
+.selected-amount-action{
+    margin-top: 22px;
+}
+.legal-info-check-box{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--body-font);
+}
+.legal-info-check-box label{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--body-font);
+}
+.legal-info-check-box input{
+    flex-basis: 20px;
+    flex-shrink: 0;
+}
+.selected-amount-action .monthly-recuring,
+.selected-amount-action .become-member-box, .become-member-box{
+    display: inline-flex;
+    padding: 10px 20px 10px 15px;
+    gap: 12px;
+    align-items: center;
+    background: var(--light-green);
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--body-font);
+}
+.become-member-box label{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--body-font);
+    padding-bottom: 0px;
+}
+#monthlyRecuring,
+#becomeMemberBox,
+#legalInfoBox2,
+#legalInfoBox3,
+#legalInfo1,
+#legalInfo2,
+#legalInfo3,
+#legalInfoBox4{
+    background: #FFFFFF;
+    border: 1px solid #27AE60 !important;
+    outline: none !important;
+    border-radius: 4px;
+    height: 20px !important;
+    width: 20px !important;
+}
+.selected-amount-action .become-member-box, .become-member-box{
+    margin-top: 22px;
+    background-color: inherit !important;
+}
+form.desc-form .become-member-box{
+    padding: 10px 20px 10px 15px;
+    margin-top: 0px;
+}
+.eligible-tax-return{
+    padding: 10px 20px 10px 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+.amount-list .amount-list-item.selected{
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+.eligible-tax-return i{
+    font-size: 20px;
+}
+.eligible-tax-return span{
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--body-font);
+}
+.eligible-tax-return span .tax-amount{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+}
+.donation-form-card .donate-button{
+    margin-top: 35px;
+}
+.donation-form-card .donate-button button{
+    width: 100%;
+    display: block;
+    text-align: center;
+    background: #00AD52;
+    border-radius: 4px;
+    padding: 16px 35px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    color: #FFFFFF;
+}
+.desc-form{
+    margin-top: 35px;
+}
+.donating-to-select-box{
+    margin-bottom: 22px;
+}
+.riding-of-membership-select-box{
+    margin-bottom: 34px;
+}
+.donating-to-select-box label,
+.riding-of-membership-select-box label{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--body-font);
+    margin-bottom: 5px;
+}
+
+.form-group-row .c-form-group label{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--body-font);
+    margin-bottom: 5px;
+}
+
+
+.payment-title {
+    width: 100%;
+    text-align: center;
+}
+
+.form-container .field-container:first-of-type {
+    grid-area: name;
+}
+
+.form-container .field-container:nth-of-type(2) {
+    grid-area: number;
+}
+
+.form-container .field-container:nth-of-type(3) {
+    grid-area: expiration;
+}
+
+.form-container .field-container:nth-of-type(4) {
+    grid-area: security;
+}
+
+.field-container input {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.field-container {
+    position: relative;
+}
+
+.form-container {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 90px 90px 90px;
+    grid-template-areas: "name name""number number""expiration security";
+    max-width: 100%;
+    color: #707070;
+    row-gap: 23px;
+}
+
+.card-form-wrapper label {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 7px;
+    color: var(--body-font);
+}
+
+input {
+    padding: 15px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #dcdcdc;
+}
+
+.ccicon {
+    height: 22px;
+    position: absolute;
+    right: 14px;
+    top: calc(50% + -10px);
+    width: 33px;
+}
+
+.btn-container{
+    margin-top: 50px;
+}
+
+/* CREDIT CARD IMAGE STYLING */
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
+.save-card-info button{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    /* color: var(--dark); */
+    background: #4DF189;
+    border-radius: 4px;
+    padding: 14px 20px;
+    border: none;
+}
+
+/* .container {
+    width: 100%;
+    max-width: 400px;
+    max-height: 251px;
+    height: 54vw;
+    padding: 20px;
+} */
+
+#ccsingle {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}
+
+#ccsingle svg {
+    width: 100px;
+    max-height: 60px;
+}
+
+.creditcard svg#cardfront,
+.creditcard svg#cardback {
+    width: 100%;
+    -webkit-box-shadow: 1px 5px 6px 0px black;
+    box-shadow: 1px 5px 6px 0px black;
+    border-radius: 22px;
+}
+
+#generatecard{
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    color: #fff;
+    padding: 2px 4px;
+    background-color: #909090;
+    border-radius: 4px;
+    cursor: pointer;
+    float:right;
+}
+
+/* CHANGEABLE CARD ELEMENTS */
+.creditcard .lightcolor,
+.creditcard .darkcolor {
+    -webkit-transition: fill .5s;
+    transition: fill .5s;
+}
+
+.creditcard .lightblue {
+    fill: #03A9F4;
+}
+
+.creditcard .lightbluedark {
+    fill: #0288D1;
+}
+
+.creditcard .red {
+    fill: #ef5350;
+}
+
+.creditcard .reddark {
+    fill: #d32f2f;
+}
+
+.creditcard .purple {
+    fill: #ab47bc;
+}
+
+.creditcard .purpledark {
+    fill: #7b1fa2;
+}
+
+.creditcard .cyan {
+    fill: #26c6da;
+}
+
+.creditcard .cyandark {
+    fill: #0097a7;
+}
+
+.creditcard .green {
+    fill: #66bb6a;
+}
+
+.creditcard .greendark {
+    fill: #388e3c;
+}
+
+.creditcard .lime {
+    fill: #d4e157;
+}
+
+.creditcard .limedark {
+    fill: #afb42b;
+}
+
+.creditcard .yellow {
+    fill: #ffeb3b;
+}
+
+.creditcard .yellowdark {
+    fill: #f9a825;
+}
+
+.creditcard .orange {
+    fill: #ff9800;
+}
+
+.creditcard .orangedark {
+    fill: #ef6c00;
+}
+
+.creditcard .grey {
+    fill: #bdbdbd;
+}
+
+.creditcard .greydark {
+    fill: #616161;
+}
+
+/* FRONT OF CARD */
+#svgname {
+    text-transform: uppercase;
+}
+
+#cardfront .st2 {
+    fill: #FFFFFF;
+}
+
+#cardfront .st3 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+}
+
+#cardfront .st4 {
+    font-size: 54.7817px;
+}
+
+#cardfront .st5 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+}
+
+#cardfront .st6 {
+    font-size: 33.1112px;
+}
+
+#cardfront .st7 {
+    opacity: 0.6;
+    fill: #FFFFFF;
+}
+
+#cardfront .st8 {
+    font-size: 24px;
+}
+
+#cardfront .st9 {
+    font-size: 36.5498px;
+}
+
+#cardfront .st10 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 300;
+}
+
+#cardfront .st11 {
+    font-size: 16.1716px;
+}
+
+#cardfront .st12 {
+    fill: #4C4C4C;
+}
+
+/* BACK OF CARD */
+#cardback .st0 {
+    fill: none;
+    stroke: #0F0F0F;
+    stroke-miterlimit: 10;
+}
+
+#cardback .st2 {
+    fill: #111111;
+}
+
+#cardback .st3 {
+    fill: #F2F2F2;
+}
+
+#cardback .st4 {
+    fill: #D8D2DB;
+}
+
+#cardback .st5 {
+    fill: #C4C4C4;
+}
+
+#cardback .st6 {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+}
+
+#cardback .st7 {
+    font-size: 27px;
+}
+
+#cardback .st8 {
+    opacity: 0.6;
+}
+
+#cardback .st9 {
+    fill: #FFFFFF;
+}
+
+#cardback .st10 {
+    font-size: 24px;
+}
+
+#cardback .st11 {
+    fill: #EAEAEA;
+}
+
+#cardback .st12 {
+    font-family: 'Rock Salt', cursive;
+}
+
+#cardback .st13 {
+    font-size: 37.769px;
+}
+
+/* FLIP ANIMATION */
+.container {
+    perspective: 1000px;
+}
+
+.creditcard {
+    width: 100%;
+    max-width: 400px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: -webkit-transform 0.6s;
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+    transition: transform 0.6s, -webkit-transform 0.6s;
+    cursor: pointer;
+}
+
+.creditcard .front,
+.creditcard .back {
+    position: absolute;
+    width: 100%;
+    max-width: 400px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    color: #47525d;
+}
+
+.creditcard .back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.creditcard.flipped {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+#error-msg{
+    color: red;
+}
+

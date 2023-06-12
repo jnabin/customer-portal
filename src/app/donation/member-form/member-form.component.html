@@ -1,0 +1,270 @@
+<app-nav-bar></app-nav-bar>
+<div class="external-donation-main">
+    <img src="/assets/img/pexels-evan-velez-saxer.svg" alt="" srcset="">
+    <div class="gradiet-green-bg"></div>
+    <div class="external-donation-form-wrapper container">
+        <div class="donation-form-card">
+            <div class="donation-steps">
+                <span data-tag="1" id="firstStep" class="current-step step-item first-step"></span>
+                <span data-tag="2" id="secondStep" class="step-item second-step"></span>
+                <span data-tag="3" id="thirdStep" class="step-item third-step"></span>
+                <span data-tag="4" id="fourthStep" class="step-item fourth-step"></span>
+                <span data-tag="5" id="fifthStep" class="step-item fifth-step"></span>
+            </div>
+            <div id="donation_step_1" class="donation-step-1">
+             <div class="donation-amount-label">Choose a Donation Amount</div>
+             <div class="donation-list-wrapper">
+                 <div class="amount-label">Amount</div>
+                 <div id="amountListWrapper" class="amount-list">
+                    <div *ngFor="let item of donationsLists" (click)="selectDonationAmount(item)" class="amount-list-item" [class.selected]="item.isActive">{{item.val}}</div>
+                     <input [(ngModel)]="currentAmount" placeholder="Other amount" type="text" id="addAmountInput" class="add-amount-item addAmountInput" name="addAmountInput" (keyup.enter)="addOtherAmount()">
+                 </div>
+             </div>
+             <div class="selected-amount-action">
+                 <div class="monthly-recuring">
+                     <input type="checkbox" name="monthlyRecuring" id="monthlyRecuring">
+                     <label for="monthlyRecuring">Make this a monthly recurring donation</label>
+                 </div>
+                 <br>
+                 <div class="become-member-box">
+                     <input type="checkbox" name="becomeMemberBox" id="becomeMemberBox">
+                     <label for="becomeMemberBox">Become a member</label>
+                     <!-- <span class="amount-per-year" (click)="selectDonationAmount(this, 'amount-per-year')">
+                         1 Year / 10$
+                     </span>
+                     <span class="amount-per-year" (click)="selectDonationAmount(this, 'amount-per-year')">
+                         2 Years / 20$
+                     </span>
+                     <span class="amount-per-year" (click)="selectDonationAmount(this, 'amount-per-year')">
+                         3 Years / 25$
+                     </span> -->
+                 </div>
+                 <br>
+                 <div class="eligible-tax-return">
+                     <i class="fa-solid fa-circle-info"></i>
+                     <span>
+                         You are eligible for a tax return of upto  <span class="tax-amount">$37.50</span>
+                     </span>
+                 </div>
+                 <div class="donate-button">
+                     <button (click)="toggleDonation(1, 2, 'secondStep')">Donate</button>
+                 </div>
+             </div>
+            </div>
+            <div id="donation_step_2" class="donation-step-2 d-none">
+             <div class="donation-amount-label">
+                <i (click)="toggleDonation(2, 1, 'firstStep')" class="fa-solid fa-chevron-left"></i>
+                Personal Information
+             </div>
+             <form class="desc-form">
+                <div class="form-group-row">
+                   <div class="c-form-group">
+                      <label>Firstname</label>
+                      <input type="text" name="" id="">
+                   </div>
+                   <div class="c-form-group">
+                      <label>Lastname</label>
+                      <input type="text" name="" id="">
+                   </div>
+                </div>
+                <div class="form-group-row">
+                   <div class="c-form-group">
+                      <label>Email Address</label>
+                      <input type="email" name="" id="">
+                   </div>
+                   <div class="c-form-group">
+                      <label>Cellphone</label>
+                      <input type="tel" name="" id="">
+                   </div>
+                </div>
+                <div class="form-group-row">
+                   <div class="c-form-group">
+                      <label>Birth Date</label>
+                      <input type="date" name="" id="">
+                   </div>
+                </div>
+                <div class="become-member-box">
+                   <input type="checkbox" name="legalInfoBox2" id="legalInfoBox2">
+                   <label for="legalInfoBox2">Accept legal action to share this with Democratic </label>
+               </div>
+               <div class="donate-button">
+                <button type="button" (click)="toggleDonation(2, 3, 'thirdStep')">Continue to Billing Address</button>
+                </div>
+             </form>
+            </div>
+            <div id="donation_step_3" class="donation-step-3 d-none">
+             <div class="donation-amount-label">
+                <i (click)="toggleDonation(3, 2, 'secondStep')" class="fa-solid fa-chevron-left"></i>
+                Billing Address
+             </div>
+             <form class="desc-form">
+                <div class="form-group-row">
+                   <div class="c-form-group">
+                      <label for="search_address">Search Address</label>
+                      <input id="search_address" type="search" name="" id="">
+                   </div>
+                </div>
+                <div class="form-group-row">
+                   <div class="c-form-group">
+                      <label>Country</label>
+                      <input type="text" name="" id="">
+                   </div>
+                   <div class="c-form-group">
+                      <label>Province</label>
+                      <input type="text" name="" id="">
+                   </div>
+                </div>
+                <div class="form-group-row">
+                   <div class="c-form-group">
+                      <label>City</label>
+                      <input type="text" name="" id="">
+                   </div>
+                   <div class="c-form-group">
+                      <div class="form-group-row">
+                         <div class="c-form-group">
+                            <label>Apartment</label>
+                            <input type="text" name="" id="">
+                         </div>
+                         <div class="c-form-group">
+                            <label>Civic</label>
+                            <input type="text" name="" id="">
+                         </div>
+                      </div>
+                   </div>
+                   
+                </div>
+                <div class="form-group-row">
+                   <div class="c-form-group">
+                      <label>Street</label>
+                      <input type="text" name="" id="">
+                   </div>
+                   <div class="c-form-group">
+                      <label>Matricule Number(Elector)</label>
+                      <input type="text" name="" id="">
+                   </div>
+                </div>
+                <div class="become-member-box">
+                   <input type="checkbox" name="legalInfoBox3" id="legalInfoBox3">
+                   <label for="legalInfoBox3">Accept legal action to share this with Democratic</label>
+               </div>
+               <div class="donate-button">
+                <button type="button" (click)="toggleDonation(3, 4, 'fourthStep')">Continue to Legal</button>
+                </div>
+             </form>
+            </div>
+            <div id="donation_step_4" class="donation-step-4 d-none">
+             <div class="donation-amount-label">
+                <i (click)="toggleDonation(4, 3, 'thirdStep')" class="fa-solid fa-chevron-left"></i>
+                Legal Information
+             </div>
+             <form class="desc-form">
+                <div class="legal-info-check-box">
+                   <input type="checkbox" name="legalInfo1" id="legalInfo1">
+                   <label for="legalInfo1">Porta at vestibulum porta blandit nec facilisi phasellus. Turpis laoreet tortor ultrices interdum ornare eu praesent egestas suspendisse. Ultrices mus quisque pulvinar vel vulputate amet. Gravida aliquet nunc leo morbi faucibus id vitae</label>
+               </div>
+                <div class="legal-info-check-box">
+                   <input type="checkbox" name="legalInfo2" id="legalInfo2">
+                   <label for="legalInfo2">Porta at vestibulum porta blandit nec facilisi phasellus. Turpis laoreet tortor ultrices interdum ornare eu praesent egestas suspendisse. Ultrices mus quisque pulvinar vel vulputate amet. Gravida aliquet nunc leo morbi faucibus id vitae</label>
+               </div>
+                <div class="legal-info-check-box">
+                   <input type="checkbox" name="legalInfo3" id="legalInfo3">
+                   <label for="legalInfo3">Porta at vestibulum porta blandit nec facilisi phasellus. Turpis laoreet tortor ultrices interdum ornare eu praesent egestas suspendisse. Ultrices mus quisque pulvinar vel vulputate amet. Gravida aliquet nunc leo morbi faucibus id vitae</label>
+               </div>
+               <div class="extra-input-fields">
+                <div class="form-group-row">
+                   <div class="c-form-group">
+                      <label>Solicitor</label>
+                      <input placeholder="Ex - John Doe" type="text" name="" id="">
+                   </div>
+                </div>
+                <div class="donating-to-select-box">
+                   <label for="dontingToDropdown">Donating to</label>
+                   <select class="form-control" id="dontingToDropdown" name="dontingTo"></select>
+                </div>
+                <div class="riding-of-membership-select-box">
+                   <label for="ridingMembershipDropdown">Riding of Membership</label>
+                   <select class="form-control" id="ridingMembershipDropdown" name="ridingMembershipDropdown"></select>
+                </div>
+               </div>
+               <div class="become-member-box">
+                <input type="checkbox" name="legalInfoBox4" id="legalInfoBox4">
+                <label for="legalInfoBox4">Accept legal action to share this with Democratic </label>
+             </div>
+               <div class="donate-button">
+                <button type="button" (click)="toggleDonation(4, 5, 'fifthStep')">Continue to Payment Information</button>
+                </div>
+             </form>
+            </div>
+            <div id="donation_step_5" class="donation-step-5 d-none">
+             <div class="donation-amount-label">
+                <i (click)="toggleDonation(5, 4, 'fourthStep')" class="fa-solid fa-chevron-left"></i>
+                Payment Information
+             </div>
+             <form class="desc-form">
+                <div id="card-form-wrapper" class="card-form-wrapper">
+                   <div class="form-container">
+                     <div id="name-field" class="field-container">
+                       <label for="name">Name on Card</label>
+                       <span id="error-msg"></span>
+                       <input
+                         id="name"
+                         maxlength="20"
+                         type="text"
+                         placeholder="Name"
+                       />
+                     </div>
+                     <div id="cardnumber-field" class="field-container">
+                       <label for="cardnumber">Card Number</label>
+                       <span id="error-msg"></span>
+                       <div class="position-relative">
+                         <input
+                           id="cardnumber"
+                           type="text"
+                           pattern="[0-9]*"
+                           inputmode="numeric"
+                           placeholder="XXXX XXXX XXXX XXXX"
+                         />
+                         <svg
+                           id="ccicon"
+                           class="ccicon"
+                           width="750"
+                           height="471"
+                           viewBox="0 0 750 471"
+                           version="1.1"
+                           xmlns="http://www.w3.org/2000/svg"
+                           xmlns:xlink="http://www.w3.org/1999/xlink"
+                         ></svg>
+                       </div>
+                     </div>
+                     <div id="expirationdate-field" class="field-container">
+                       <label for="expirationdate">Expiry Date</label>
+                       <span id="error-msg"></span>
+                       <input
+                         id="expirationdate"
+                         type="text"
+                         pattern="[0-9]*"
+                         inputmode="numeric"
+                         placeholder="MM/YY"
+                       />
+                     </div>
+                     <div id="securitycode-field" class="field-container">
+                       <label for="securitycode">CVC/CVV</label>
+                       <span id="error-msg"></span>
+                       <input
+                         id="securitycode"
+                         type="text"
+                         pattern="[0-9]*"
+                         inputmode="numeric"
+                         placeholder="CVV"
+                       />
+                     </div>
+                   </div>
+                 </div>
+               <div class="donate-button">
+                <button type="button">Make the Donation</button>
+                </div>
+             </form>
+            </div>
+        </div>
+    </div>
+</div>
