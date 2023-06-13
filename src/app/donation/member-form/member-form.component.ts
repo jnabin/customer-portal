@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 declare const $: any;
 @Component({
   selector: 'app-member-form',
@@ -14,6 +15,13 @@ export class MemberFormComponent implements OnInit{
   ridingMebership = [
       {id: 1, name: 'Democratik', text: 'Democratik'}
   ];
+  periods = [
+    {name: '1 Year', value: '1 year'}
+  ];
+  selectedPeriod: any = '1 year';
+  color: ThemePalette = 'primary';
+  checked = false;
+  disabled = false;
   availableAdress = [
     {
         "label": "Alberta",

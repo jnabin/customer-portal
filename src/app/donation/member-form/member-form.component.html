@@ -1,6 +1,6 @@
 <app-nav-bar></app-nav-bar>
 <div class="external-donation-main">
-    <img src="/assets/img/pexels-evan-velez-saxer.svg" alt="" srcset="">
+    <img class="bg-img" src="/assets/img/pexels-evan-velez-saxer.svg" alt="" srcset="">
     <div class="gradiet-green-bg"></div>
     <div class="external-donation-form-wrapper container">
         <div class="donation-form-card">
@@ -12,8 +12,8 @@
                 <span data-tag="5" id="fifthStep" class="step-item fifth-step"></span>
             </div>
             <div id="donation_step_1" class="donation-step-1">
-             <div class="donation-amount-label">Choose a Donation Amount</div>
-             <div class="donation-list-wrapper">
+             <div class="donation-amount-label">Become a Member</div>
+             <!-- <div class="donation-list-wrapper">
                  <div class="amount-label">Amount</div>
                  <div id="amountListWrapper" class="amount-list">
                     <div *ngFor="let item of donationsLists" (click)="selectDonationAmount(item)" class="amount-list-item" [class.selected]="item.isActive">{{item.val}}</div>
@@ -29,15 +29,6 @@
                  <div class="become-member-box">
                      <input type="checkbox" name="becomeMemberBox" id="becomeMemberBox">
                      <label for="becomeMemberBox">Become a member</label>
-                     <!-- <span class="amount-per-year" (click)="selectDonationAmount(this, 'amount-per-year')">
-                         1 Year / 10$
-                     </span>
-                     <span class="amount-per-year" (click)="selectDonationAmount(this, 'amount-per-year')">
-                         2 Years / 20$
-                     </span>
-                     <span class="amount-per-year" (click)="selectDonationAmount(this, 'amount-per-year')">
-                         3 Years / 25$
-                     </span> -->
                  </div>
                  <br>
                  <div class="eligible-tax-return">
@@ -49,6 +40,53 @@
                  <div class="donate-button">
                      <button (click)="toggleDonation(1, 2, 'secondStep')">Donate</button>
                  </div>
+             </div> -->
+             <div class="become-member-card">
+               <div class="org-card-info">
+                  <div class="org-logo-illust">
+                     <img src="/assets/img/democratic-hub.svg" alt="" srcset="">
+                     <img src="/assets/img/Ellipse-dim.svg" alt="" srcset="">
+                  </div>
+                  <div class="org-name-i">
+                     <span class="a-name">Democratic</span>
+                     <span class="org-level">Pro</span>
+                  </div>
+               </div>
+               <div class="year-payment">
+                  <div class="member-ship-period">
+                     <ng-select [items]="periods" 
+                     class="form-control"
+                              bindLabel="name" 
+                              [clearable]="false"
+                              [searchable]="false"
+                              [appendTo]="'body'"
+                              bindValue="value" 
+                              [(ngModel)]="selectedPeriod">
+                     </ng-select>
+                  </div>
+                  <div class="price-auto-renew">
+                     <div class="price-tag">
+                        <div class="price-label">Price</div>
+                        <div class="price-amount">$49.90</div>
+                     </div>
+                     <div class="auto-renew-tag">
+                        <div class="mat-toggle-switch">
+                           <mat-slide-toggle
+                              class="example-margin"
+                              [color]="color"
+                              [checked]="checked"
+                              [disabled]="disabled">
+                           </mat-slide-toggle>
+                        </div>
+                        <div class="renew-label text-end">
+                           Auto-Renew
+                        </div>
+                     </div>
+                  </div>
+               </div>
+             </div>
+             <div class="continuew-member-card">
+               <button (click)="toggleDonation(1, 2, 'secondStep')">Continue to Membership card</button>
              </div>
             </div>
             <div id="donation_step_2" class="donation-step-2 d-none">

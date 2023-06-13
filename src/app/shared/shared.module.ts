@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -11,12 +13,15 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MaterialModule
   ],
   exports: [
     NavBarComponent,
     CommonModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule,
+    MaterialModule
   ]
 })
 export class SharedModule { }
