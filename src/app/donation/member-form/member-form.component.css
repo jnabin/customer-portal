@@ -33,7 +33,7 @@
     border: 1px solid #E8E7EE;
     box-shadow: 0px 16px 34px rgba(0, 0, 0, 0.3);
     border-radius: 6px;
-    padding: 44px 40px;
+    padding: 44px 28px;
 }
 
 .donation-form-card .donation-steps{
@@ -735,4 +735,85 @@ input {
     color: white;
     background: #00AD52;
     border-radius: 4px;
+}
+.card-informations{
+    padding: 25px;
+    padding-bottom: 0px;
+}
+
+/* ng-select .ng-select-container span.ng-arrow-wrapper span.ng-arrow {
+    mask-image: url('/assets/img/chevron-down.svg');
+    mask-size: contain;
+
+    -webkit-mask-image: url('/assets/img/chevron-down.svg');
+    -webkit-mask-size: contain;
+
+    height: 24px;
+    top: 3px;
+    width: 24px;
+  } */
+
+ ::ng-deep .ng-select .ng-arrow-wrapper .ng-arrow{
+    background-image: url(/assets/img/chevron-down.svg);
+    height: 24px !important;
+    top: 4px !important;
+    left: 3px;
+    width: 24px !important;
+}
+
+.card-type label{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22x;
+    margin-bottom: 14px;
+    color: #1C2436;
+}
+.card-informations .card-type{
+    margin-bottom: 17px;
+}
+
+.demo-card img{
+    max-width: 380px;
+}
+.demo-card{
+    margin-bottom: 27px;
+}
+.member-card-terms{
+    position: relative;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #454C5F;
+    padding-left: 14px;
+}
+
+.member-card-terms::before{
+    position: absolute;
+    content: '*';
+    top: 0;
+    left: 0;
+}
+
+.price-with-physical-card{
+    margin-top: 23px;
+    background: rgba(162, 162, 162, 0.2);
+border-radius: 6px;
+padding: 10px 19px;
+margin-bottom: 33px;
+}
+.price-with-physical-card .c-label{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: #454C5F;
+}
+.price-with-physical-card .phy-price{
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 45px;
+    letter-spacing: 0.01em;
+    color: #2A5339;
+
 }
