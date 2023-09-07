@@ -1,5 +1,5 @@
 .external-donation-main{
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
     position: relative;
 }
 
@@ -737,8 +737,17 @@ input {
     border-radius: 4px;
 }
 .card-informations{
-    padding: 25px;
+    padding: 0px;
     padding-bottom: 0px;
+}
+
+.card-informations .card-type{
+    padding-top: 25px;
+}
+
+.card-informations .card-type label{
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 /* ng-select .ng-select-container span.ng-arrow-wrapper span.ng-arrow {
@@ -764,19 +773,41 @@ input {
 .card-type label{
     font-weight: 500;
     font-size: 16px;
-    line-height: 22x;
-    margin-bottom: 14px;
+    line-height: 22px;
+    margin-bottom: 20px;
     color: #1C2436;
 }
 .card-informations .card-type{
-    margin-bottom: 17px;
+    margin-bottom: 6px;
 }
 
+.card-types ::ng-deep .mat-mdc-radio-button .mdc-form-field{
+    color: var(--Dark-Black, #1C2436) !important;
+    font-family: DM Sans, sans-serif !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 100%; /* 14px */
+}
+.card-types{
+    margin-bottom: 6px;
+}
 .demo-card img{
-    max-width: 380px;
+    max-width: 100%;
 }
 .demo-card{
-    margin-bottom: 27px;
+    flex-basis: calc(100% - 5.5px);
+    flex-grow: 1;
+    border-radius: 4px;
+border: 1px solid var(--Border-color, #E8E7EE);
+
+
+}
+.selected{
+    background: var(--Lightest-Democratik-Green, #F2FFF3) !important;
+}
+.card-list .card-illus{
+    padding: 11px;
 }
 .member-card-terms{
     position: relative;
@@ -796,11 +827,11 @@ input {
 }
 
 .price-with-physical-card{
-    margin-top: 23px;
+    margin-top: 45px;
     background: rgba(162, 162, 162, 0.2);
 border-radius: 6px;
 padding: 10px 19px;
-margin-bottom: 33px;
+margin-bottom: 18px;
 }
 .price-with-physical-card .c-label{
     font-style: normal;
@@ -816,4 +847,151 @@ margin-bottom: 33px;
     letter-spacing: 0.01em;
     color: #2A5339;
 
+}
+.card-types mat-radio-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.card-types mat-radio-group mat-radio-button{
+    flex-grow: 1;
+    width: 100%;
+    padding: 5.5px 20px;
+    border-radius: 4px;
+    border: 1px solid var(--Border-color, #E8E7EE);
+    background: var(--White-Color, #FFF);
+}
+.card-list{
+    display: flex;
+    justify-content: space-between;
+    gap: 11px;
+}
+
+.card-list .virtual-card{
+    flex-grow: 1;
+    flex-basis: calc(100% - 5.5px);
+    border-radius: 4px;
+border: 1px solid var(--Border-color, #E8E7EE);
+background: var(--White-Color, #FFF);
+}
+.card-list .virtual-card .card{
+    border-radius: 6px;
+    background: #060A23;
+    position: relative;
+    padding: 11.97px 11.97px 13px 11.97px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28.7px;
+}
+.card-list .virtual-card .card .middle-info{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.card-list .virtual-card .card .middle-info .card-holder-name{
+    color: var(--White-Color, #FFF);
+    font-family: General Sans, sans-serif;
+    font-size: 11.083px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 11.083px */
+}
+.card-list .virtual-card .card .middle-info .card-holder-address{
+    color: var(--Input-field-border-color, #E1E0E7);
+    font-family: DM Sans, sans-serif;
+    font-size: 6.65px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 6.65px */
+}
+.card-list .virtual-card .top-card-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-list .virtual-card .card .footer-info{
+    display: flex;
+    flex-direction: column;
+    gap: 3.32px;
+}
+.card-list .virtual-card .card .footer-info .expire-date{
+    color: var(--placeholder-color, #B3B6BE);
+    font-family: DM Sans, sans-serif;
+    font-size: 6.096px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 6.096px */
+}
+.card-list .virtual-card .card .footer-info .expire-value{
+    color: var(--White-200, #F6F6F9);
+    font-family: DM Sans, sans-serif;
+    font-size: 6.096px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 6.096px */
+}
+.card-list .virtual-card .top-card-row .card-status{
+    border-radius: 3.325px;
+    background: #161C3C;
+    box-shadow: 0px 2.21667px 11.08333px 0px rgba(0, 0, 0, 0.04);
+    display: inline-flex;
+    gap: 2.2px;
+    align-items: center;
+    padding: 5.2px 11.33px 5.56px 7.54px;
+}
+.card-list .virtual-card .top-card-row .card-status .status-indicator{
+    width: 6.85px;
+    height: 6.85px;
+    border-radius: 50px;
+    outline:1px solid rgba(47, 203, 130, 1);
+    display: inline-block;
+    background-color: #161C3C;
+    position: relative;
+}
+.card-list .virtual-card .top-card-row .card-status .status-name{
+    color: var(--Border-color, #E8E7EE);
+    font-family: DM Sans, sans-serif;
+    font-size: 6.65px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 6.65px */
+}
+.card-list .virtual-card .top-card-row .card-status .status-indicator::after{
+    position: absolute;
+    content: '';
+    width: 4.3px;
+    height: 4.3px;
+    background-color: rgba(47, 203, 130, 1);
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.card-list .virtual-card .top-card-row .card-owner-name{
+    display: flex;
+    align-items: center;
+}
+.card-list .virtual-card .top-card-row .card-owner-name img{
+    max-height: 16.56px;
+}
+.card-benefits ul{
+    padding-left: 25px;
+    padding-right: 5px;
+    margin-bottom: 0px;
+    padding-bottom: 23px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.card-benefits ul li{
+    color: var(--Body-Font-color, #454C5F);
+font-family: Be Vietnam Pro, sans-serif;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 }

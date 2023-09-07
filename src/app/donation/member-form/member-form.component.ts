@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
 declare const $: any;
 @Component({
   selector: 'app-member-form',
@@ -76,6 +77,7 @@ export class MemberFormComponent implements OnInit{
         "value": "YT"
     }
 ];
+selectedCard = 'physical';
   constructor() {
   }
 
